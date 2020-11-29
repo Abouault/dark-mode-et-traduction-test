@@ -4,24 +4,15 @@ import { useTranslation } from 'react-i18next';
 
 const DarkMode = () => {
 
-    const [darkMode,setDarkMode] = useState(false)
-
-
     const { t, i18n } = useTranslation();
-
-    const handleClickDarkMode = () => {
-        setDarkMode(!darkMode)
-        console.log(darkMode)
-    }
 
     const handleClickLanguages = (lang) => {
         i18n.changeLanguage(lang);
     }
 
     return(
-        <div className={darkMode ? 'dark-mode' : 'ligth-mode'}>
+        <div>
             <nav>
-                <button onClick={handleClickDarkMode}>Dark Mode</button>
                 <button onClick={() => handleClickLanguages('fr')}>Francais</button>
                 <button onClick={() => handleClickLanguages('en')}>Anglais</button>
                 <button onClick={() => handleClickLanguages('chi')}>Chinois</button>
